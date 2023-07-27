@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <template.h>
 using testing::Types;
 class ITempSensor{
 public:
