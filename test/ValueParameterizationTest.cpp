@@ -1,14 +1,14 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 int divFun(int numerator,int denominator){
     if(denominator==0 || denominator < 0){return 0;}
 
     return numerator/denominator;
 }
-class DivFunTestSuite:public testing :: TestWithParam<std::tuple<int,int,int>>{
+class DivFunTestSuite:public::testing :: TestWithParam<std::tuple<int,int,int>>{
 protected:
 DivFunTestSuite();
 ~DivFunTestSuite();
-}
+};
 TEST_P(DivFunTestSuite,HandleValidInputs){
     int numerator=std::get<0>GetParam());
     int denomiator=std::get<1>GetParam());
