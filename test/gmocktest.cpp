@@ -2,7 +2,7 @@
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 using testing::Types;
-using testing::strictMock
+using ::testing::strictMock
 
 class ITempSensor{
     public:
