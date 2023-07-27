@@ -35,8 +35,8 @@ TestFixtureTestSuite(){
 }
 void Setup(){
    //Arrange
-   this->aptr=new C();
-   this->aptr=new B(cPtr);
+   this->cptr=new C();
+   this->bptr=new B(cPtr);
    this->aptr=new A(bPtr);
 }
 void TearDown(){
