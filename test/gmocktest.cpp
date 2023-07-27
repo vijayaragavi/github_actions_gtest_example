@@ -2,6 +2,7 @@
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 using testing::Types;
+using testing::strictMock
 
 class ITempSensor{
     public:
@@ -35,9 +36,15 @@ class MockTempSensor: public ITempSensor(){
 }
 TEST(AutoTempRegulatorTestSuite,RegulateTempInteractionTesting)
 {
-   MockTempSensor stubObj;
-   AutoTempRegulator codeUnderTest(&stubObj);
+   //NiceMock<MockTempSensor> mockObj; -> Nice GMOCK
+    //StrictMock<MockTempSensor> mockObj; -> Strict GMOCK
+    MockTempSensor mockObj; //-> Naggy GMOCK
+    
+   AutoTempRegulator codeUnderTest(&mockObj);
+    //Set Expectation
+    EXPECT_CALL(mockObj,getOutsideTemp()).Times(1);
    codeUnderTest.regulateTemp();//interaction
+    
 }
 
 int main()
