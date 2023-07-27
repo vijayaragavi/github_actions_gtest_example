@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-#include <template.h>
 using testing::Types;
 class ITempSensor{
 public:
@@ -45,5 +44,5 @@ typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
 TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
 TYPED_TEST(TempSensorFixture, Implementations) {
-	ASSERT_EQ(objUnderTest.getOutsideTemp(),23);
+	ASSERT_EQ(objUnderTest->getOutsideTemp(),23);
 }
