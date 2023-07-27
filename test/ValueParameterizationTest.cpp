@@ -4,10 +4,10 @@ int divFun(int numerator,int denominator){
 
     return numerator/denominator;
 }
-class DivFunTestSuite:public::testing :: TestWithParam<std::tuple<int,int,int>>{
+class DivFunTestSuite: public::testing::TestWithParam<std::tuple<int,int,int>>{
 protected:
-DivFunTestSuite();
-~DivFunTestSuite();
+DivFunTestSuite(){}
+~DivFunTestSuite(){}
 };
 TEST_P(DivFunTestSuite,HandleValidInputs){
     int numerator=std::get<0>(GetParam());
