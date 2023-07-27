@@ -61,6 +61,6 @@ int getOutSideTemp(){
 TEST(AutoTempRegulatorTestSuite,RegulateTempTest){
     FakeTempSensor mockObj;
     AutoTempRegulator codeUnderTest(&mockObj);
-    ASSERT_EQ(mockObj.getOutSideTempCallCount,1);
     codeUnderTest.regulateTemp();
+    ASSERT_EQ(mockObj.getOutSideTempCallCount,1);
 }
