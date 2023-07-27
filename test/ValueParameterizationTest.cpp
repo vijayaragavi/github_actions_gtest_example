@@ -10,9 +10,9 @@ DivFunTestSuite();
 ~DivFunTestSuite();
 };
 TEST_P(DivFunTestSuite,HandleValidInputs){
-    int numerator=std::get<0>GetParam());
-    int denomiator=std::get<1>GetParam());
-    int expectedValue=std::get<2>GetParam());
+    int numerator=std::get<0>(GetParam());
+    int denomiator=std::get<1>(GetParam());
+    int expectedValue=std::get<2>(GetParam());
     int actualValue=divFun(numerator,denomiator);
     ASSERT_EQ(actualValue,expectedValue);
 }
