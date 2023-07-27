@@ -20,5 +20,5 @@ INSTANTIATE_TEST_SUITE_P(DivFunTestSuiteParameterExample,DivFunTestSuite,
 ::testing::Values(
     std::make_tuple(10,5,2),
     std::make_tuple(10,0,0),
-    std::make_tuple(10,-5,0),
+    std::make_tuple(10,-5,0)
 ));
