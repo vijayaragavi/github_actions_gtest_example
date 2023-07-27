@@ -47,13 +47,13 @@ void TearDown(){
 }
 };
  
-TEST(TestFixtureTestSuite, operationTrueTest)
+TESTF(TestFixtureTestSuite, operationTrueTest)
 {
    //Act and assert
    ASSERT_TRUE(aPtr->operation());
 
 }
-TEST(TestFixtureTestSuite, operationFalseTest)
+TESTF(TestFixtureTestSuite, operationFalseTest)
 {
    //Act and assert
    ASSERT_FALSE(aPtr->operation());
