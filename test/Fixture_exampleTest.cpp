@@ -26,7 +26,7 @@ TEST(TestFixtureTest,OperationTest)
   ASSERT_TRUE(obj.operation());  
 }
 
-TEST("TestFixtureTest","OperationFalseTest")
+TEST(TestFixtureTest,OperationFalseTest)
 {
   //Arrange
   C cObj;
