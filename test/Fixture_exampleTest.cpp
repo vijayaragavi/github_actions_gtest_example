@@ -16,7 +16,7 @@ bool operator(){
 }
 );
 //Fixture test
-TEST("TestFixtureTest","OperationTest")
+TEST(TestFixtureTest,OperationTest)
 {
   //Arrange
   C cObj;
