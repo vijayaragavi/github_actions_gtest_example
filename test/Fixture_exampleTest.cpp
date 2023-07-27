@@ -1,60 +1,55 @@
-
 #include "gtest/gtest.h"
 class C{};
-class B
-{
-   C* ptr;
-   public:
-   //universal object creation
-   B(C* addressofObject): ptr(addressofObject){
-   }
+class B{
+    C* ptr;
+    public:
+    B(C* addressOfObject): ptr{addressOfObject}{
+
+    }
 };
 
-class A
-{
-   B* ptr;
-   public:
-   //universal object creation
-   A(B* addressofObject): ptr(addressofObject){
-   }
-   bool operation(){
-     return true;
-   }
+class A{
+    B* ptr;
+    public:
+    A(B* addressOfObject): ptr{addressOfObject}{
+
+    }
+    bool  operation(){
+        return true;
+    }
 };
+//Fixture Class
 class TestFixtureTestSuite:public testing::Test{
-//anything we write in this class should be under protected
-protected :
-A* aPtr;
-B *bPtr;
-C* cPtr;
+protected:
+A*  aPtr;
+B* bPtr;
+C* cPtr; 
 TestFixtureTestSuite(){
-   //initialization
+    //initializtion
 }
 ~TestFixtureTestSuite(){
-   //Releasing the Resources
+    //Releasing the Resources
 }
-void Setup(){
-   //Arrange
-   this->cPtr=new C();
-   this->bPtr=new B(cPtr);
-   this->aPtr=new A(bPtr);
-}
+void SetUp(){
+    //Arrange
+    this->cPtr=new C();
+    this->bPtr=new B(cPtr);
+    this->aPtr=new A(bPtr); 
+ }
 void TearDown(){
-   //delete resources
-   delete cPtr;
-   delete bPtr;
-   delete aPtr;
+    //delete resources
+    delete cPtr;
+    delete bPtr;
+    delete aPtr;
 }
 };
- 
-TESTF(TestFixtureTestSuite, operationTrueTest)
-{
-   //Act and assert
-   ASSERT_TRUE(aPtr->operation());
 
+TEST_F(TestFixtureTestSuite,OperationTrueTest){
+   
+    //Act and Assert
+    ASSERT_TRUE(aPtr->operation());
 }
-TESTF(TestFixtureTestSuite, operationFalseTest)
-{
-   //Act and assert
-   ASSERT_FALSE(aPtr->operation());
+TEST_F(TestFixtureTestSuite,OperationFalseTest){
+    //Act and Assert
+    ASSERT_FALSE(aPtr->operation());
 }
